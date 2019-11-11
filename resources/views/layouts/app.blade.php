@@ -78,6 +78,10 @@
                                         {{ __('Tags') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('units') }}">
+                                        {{ __('Units') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('roles') }}">
                                         {{ __('Roles') }}
                                     </a>

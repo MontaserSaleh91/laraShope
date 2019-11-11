@@ -41,6 +41,13 @@ Route::group(['middleware' => ['auth','user_is_admin']], function () {
     //Roles
     Route::get('roles','RoleController@index')->name('roles');
 
+    //Units
+    Route::get('units','UnitController@index')->name('units');
+    Route::post('units','UnitController@store');
+    Route::delete('units/{id}','UnitController@destroy')->name('units.delete');
+    Route::get('units/{id}', 'UnitController@edit')->name('units.edit');
+    Route::post('units/{id}', 'UnitController@update')->name('units.update');
+
 
     
 });
