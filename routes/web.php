@@ -25,12 +25,20 @@ Route::group(['middleware' => ['auth','user_is_admin']], function () {
 
     //Categories
     Route::get('categories','CategoryController@index')->name('categories');
+    Route::post('categories','CategoryController@store');
+    Route::delete('categories/{id}','CategoryController@destroy')->name('categories.delete');
+    Route::get('categories/{id}', 'CategoryController@edit')->name('categories.edit');
+    Route::post('categories/{id}', 'CategoryController@update')->name('categories.update');
 
     //Products
     Route::get('products','ProductController@index')->name('products');
 
     //Tags
     Route::get('tags','TagController@index')->name('tags');
+    Route::post('tags','TagController@store');
+    Route::delete('tags/{id}','TagController@destroy')->name('tags.delete');
+    Route::get('tags/{id}', 'TagController@edit')->name('tags.edit');
+    Route::post('tags/{id}', 'TagController@update')->name('tags.update');
 
     //Reviews
     Route::get('reviews','ReviewController@index')->name('reviews');
